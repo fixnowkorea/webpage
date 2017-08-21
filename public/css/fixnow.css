@@ -1,0 +1,589 @@
+/*FONT*/
+/*Nanum Barun Gothic*/
+@import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
+/*Jeju Gothic*/
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+/*Nanum Gothic*/
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+
+/*Mobile Page*/
+/*This applies for mobile ( min 320px up to 767px )*/
+@media screen and (min-width: 320px) {
+
+}
+
+/*This applies from Tablet ( 769 - 1199 )*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  body .nav>li>a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  body .request5 .issue-selector .issue-name {
+    border: 1px solid #CACCCD;
+    background-color: #FFFFFF;
+    border-radius: 5%;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    cursor: pointer;
+  }
+  body .request5 .issue-description textarea {
+    font-size: 14px;
+    width: 93%;
+    border-width: 1.1px;
+    height: 100px;
+    margin-right: 0px;
+  }
+  /*.request6 li{
+    list-style-type: none;
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 0;
+    color: #232323;
+    font-weight: 500;
+    border: 1px solid #CACCCD;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    cursor: pointer;
+  }*/
+  .request6 .timePicker .first_block {
+    width: 90%;
+    display: inline-block;
+    margin-bottom: auto;
+    padding: 0px;
+  }
+  .request6 .timePicker .second_block {
+    width: 90%;
+    display: inline-block;
+    padding: 0px;
+  }
+  .request6 .timePicker .third_block {
+    width: 90%;
+    display: inline-block;
+    padding: 0px;
+  }
+
+  body .footer h3 {
+    font-size: 14px;
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: 'Nanum Gothic', sans-serif !important;
+  height: 100%;
+  min-width: 800px;
+
+}
+/*NAVIGATION*/
+nav {
+  margin-bottom: 0 !important;
+  position: relative !important;
+}
+.fixnow-nav {
+  padding: 10px !important;
+}
+/*HEADER*/
+.header {
+  height: 700px;
+  width: 100%;
+  max-height: 1000px;
+  background-image: url(../img/bg_n.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 30px 0 30px;
+  margin-top: 50px;
+}
+.header .row div {
+  margin-top: 10%;
+  text-align: center;
+}
+.header h1 {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 2%;
+  font-family: 'Jeju Gothic', sans-serif;
+  font-weight: 700;
+}
+.header p {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 3%;
+}
+.header .btn {
+  border-radius: 0;
+  margin: 40px 5%;
+  width: 200px;
+}
+.header .btn-primary {
+  background-color: #1AB49C;
+  border-color: #1AB49C;
+}
+.header .btn-primary:hover {
+  background-color: #FFFFFF;
+  color: #1AB49C;
+  border-color: #1AB49C;
+}
+.header .btn-success:hover {
+  background-color: #FFFFFF;
+  color: #5CB85C;
+  border-color: #5CB85C;
+}
+.header button {
+  font-size: 14px;
+}
+
+/*SECTION 1*/
+.section {
+  margin-top: 50px;
+  text-align: center;
+}
+.section1 img {
+  height: 100px;
+  width: 100px;
+}
+.section1 h3 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.section1 p {
+  font-size: 14px;
+}
+/*SECTION 2*/
+.section2 .btn {
+  border-radius: 5px;
+  margin: 40px 20px;
+  border: 1px #1AB49C solid;
+  background-color: #FFFFFF;
+}
+.section2 .btn:hover {
+  background-color: #1AB49C;
+  color: #FFFFFF;
+}
+.section2 button {
+  width: 65%;
+}
+/*SECTION 3*/
+.section3 img {
+  height: 50px;
+}
+.section3 img:hover {
+  opacity: 0.5;
+}
+.col-half-offset {
+  margin-left: 4.16666666666667%
+}
+/*SECTION 4*/
+.section4 .btn {
+  border-radius: 5px;
+  margin: 40px 20px;
+  border: 1px #1AB49C solid;
+  background-color: #FFFFFF;
+}
+.section4 .btn:hover {
+  background-color: #1AB49C;
+  color: #FFFFFF;
+}
+.section4 button {
+  width: 65%;
+}
+
+
+/*FOOTER*/
+.footer {
+  color: #323232;
+  background-color: #F4F4F4;
+  margin-top: 20px;
+}
+.footer .container {
+  padding-top: 40px;
+}
+.footer .policy {
+  float: left;
+  font-size: 11px;
+  color: #6D6D6D;
+}
+.footer .policy a {
+  text-decoration: none;
+  color: #6D6D6D;
+}
+.footer .callout h3 {
+  font-weight: bold;
+  margin-top: 0;
+}
+.footer .workinghours p {
+  font-size: 11px;
+}
+.footer .workinghours h5 {
+  font-size: 14px;
+}
+
+
+/*END*/
+.rights {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+
+
+/*REQUEST PAGE : MODEL*/
+/*REQUEST 1*/
+body .request1 {
+  margin-top: 0;
+}
+.request1 .container-fluid {
+  background-color: #F4F4F4;
+  padding-top: 20px;
+}
+.request1 .line {
+  height: 2px;
+  background-color: #CACCCD;
+  width: 67%;
+  margin: auto;
+  position: relative;
+  top: 20px;
+}
+.request1 .process {
+  background-color: #F4F4F4;
+  border: 2px solid #CACCCD;
+  color: #CACCCD;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border-radius: 50%;
+  display: block;
+  vertical-align: middle;
+  padding: 6px;
+}
+.request1 .process-active {
+  background-color: #1ab49c;
+  border: 7px solid transparent;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border-radius: 50%;
+  display: block;
+  vertical-align: middle;
+}
+
+.request1 .process-completed {
+  background-color: #F4F4F4;
+  border: 2px solid #1AB49C;
+  color: #1AB49C;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border-radius: 50%;
+  display: block;
+  vertical-align: middle;
+  padding: 6px;
+}
+
+.request1 .process p{
+
+}
+.request1 .row {
+  height: 100px;
+}
+/*REQUEST 2*/
+.row-selector{
+  padding: 0 100px;
+}
+.request2 {
+  margin: 70px 0;
+}
+.request2 .text-center {
+  border-bottom: 1px solid #CACCCD;
+  padding-bottom: 20px;
+  font-weight: 500;
+}
+.request2 .text-center p {
+  font-size: 24px;
+}
+/*REQUEST 3 - CHOOSE MODEL*/
+.request3 {
+  margin: 70px 0;
+}
+.request3 button {
+  width: 140px;
+  height: 140px;
+  border: 1px solid #CACCCD;
+  border-radius: 5%;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  padding: 0;
+  margin: 8px 4px;
+  display: inline-block;
+}
+.request3 button:hover {
+  border: 2px solid #1AB49C;
+  background-color: #F4F4F4;
+}
+/*REQUEST 4 - CHOOSE COLOR*/
+.request4  {
+  margin: 70px 0;
+  height: 342px;
+}
+.request4 .color {
+  border: none;
+}
+.request4 button {
+ width: 140px;
+ height: 140px;
+}
+.request4 button:hover {
+  border: 2px solid #1AB49C;
+}
+.request4 .color {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+.request4 form div {
+  margin: 5px;
+  display: inline-block;
+}
+.request4 .jetblack {
+  background-color: black;
+}
+.request4 .black {
+  background-color: #303030;
+}
+.request4 .spacegray {
+  background-color: #343d46;
+}
+.request4 .rosegold {
+  background-color: #e9cec7;
+}
+.request4 .gold {
+  background-color: #ecddcc;
+}
+.request4 .silver {
+  background-color: #e9ebea;
+}
+.request4 .red {
+  background-color: #cc3341;
+}
+.request4 .white {
+  background-color: #fffafa;
+}
+/*REQUEST 5 - CHOOSE ISSUE*/
+.request5 {
+  margin: 70px 0;
+  display: none;
+}
+.request5 .issue-selector {
+  display: inline-block;
+}
+.request5 .issue-selector .issue-name {
+  border: 1px solid #000000;
+  border-radius: 5%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  cursor: pointer;
+}
+.request5 .issue-description {
+  margin-top: 30px;
+}
+.request5 .issue-description textarea {
+  font-size: 14px;
+  width: 88%;
+  /*media 1199px는 width: 93%*/
+  height: 100px;
+  margin-right: 0px;
+}
+.request5 button {
+  width: 200px;
+  height: 60px;
+  border: 1px solid #CACCCD;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  padding: 0;
+  margin: 8px 4px;
+  display: inline-block;
+}
+.request5 button:hover {
+  border: 2px solid #1AB49C;
+  background-color: #F4F4F4;
+}
+/*REQUEST 6 - CHOOSE DATE*/
+.request6 {
+  margin: 70px 0;
+  display: none;
+}
+.request6 .dayContainer {
+  display: inline-block;
+  margin: 15px;
+}
+.request6 .day {
+  display: table-cell;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+.request6 .dayName {
+  display: block;
+}
+.request6 .dayNumber {
+  display: block;
+}
+.request6 .timePicker {
+  height: 100%;
+  margin: 70px 0;
+}
+.request6 #chooseDate {
+  color: black;
+  display: inline-block;
+}
+.request6 li{
+  list-style-type: none;
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
+  color: #232323;
+  font-weight: 500;
+  border: 1px solid #CACCCD;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  cursor: pointer;
+}
+.request6 .first_block {
+  width: 33%;
+  display: inline-block;
+  margin-bottom: auto;
+}
+.request6 .second_block {
+  width: 33%;
+  display: inline-block;
+}
+.request6 .third_block {
+  width: 33%;
+  display: inline-block;
+}
+.request6 button {
+  width: 200px;
+  height: 60px;
+  border: 1px solid #CACCCD;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  padding: 0;
+  margin: 8px 4px;
+  display: inline-block;
+}
+.request6 button:hover {
+  border: 2px solid #1AB49C;
+  background-color: #F4F4F4;
+}
+
+/*REQUEST 7 - CHOOSE ADDRESS*/
+.request7 {
+  margin: 70px 0;
+  display: none;
+}
+.request7 .container {
+  width: 800px;
+}
+.request7 .select-address{
+}
+.request7 .container .row div{
+  padding: 0;
+  margin: 10px;
+}
+.request7 .row div {
+  border: 1px solid #d3d3d3;
+}
+.request7 input {
+  height: 60px;
+  width: 80%;
+  font-size: 20px;
+  float:left;
+  border: 0px;
+}
+.request7 .select-address p {
+  width: 20%;
+  color: #1ab49c;
+  font-size: 18px;
+  font-weight: 400;
+  float: left;
+  line-height: 60px;
+  margin: 0;
+}
+.request7 .address1 input {
+  height: 60px;
+  width: 60%;
+  font-size: 20px;
+  display: inline-block;
+  float: left;
+}
+.request7 .address1 .addressBtn {
+  height: 60px;
+  width: 20%;
+  font-size: 20px;
+  display: inline-block;
+  float: left;
+  background-color: #1ab49c;
+  color: #FFFFFF;
+  line-height: 60px;
+}
+.request7 .findAddress {
+  margin: 0;
+  padding: 0;
+}
+
+.request7 .address2 {
+  margin:0;
+  padding:0;
+}
+
+.request7 button {
+  width: 200px;
+  height: 60px;
+  border: 1px solid #CACCCD;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  padding: 0;
+  margin: 8px 4px;
+  display: inline-block;
+}
+.request7 button:hover {
+  border: 2px solid #1AB49C;
+  background-color: #F4F4F4;
+}

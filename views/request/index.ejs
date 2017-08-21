@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WORKING ON TEST PAGE</title>
+    <!-- Theme CSS -->
+    <link href="http://13.124.2.3:8000/css/fixnow.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="http://13.124.2.3:8000/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <% include ../template/nav %>
+    <!-- END NAVIGATION -->
+    <!-- REQUEST 1 -->
+    <div id="request1" class="section request1">
+      <div class="container-fluid">
+        <div class="line"></div>
+        <div class="row">
+          <div class="col-xs-4">
+              <div id="process1" class="process-active">
+                1
+              </div>
+              <p>
+                Your Device<br/>
+                <span id="selectedDevice"></span>
+                <span id="selectedColor"></span>
+              </p>
+          </div>
+          <div class="col-xs-4">
+              <div id="process2" class="process">
+                  2
+              </div>
+              <p>
+                  Issue<br />
+                <span id="selectedIssue">
+                  <!-- 여기는 반복문을 넣어서 <span>ㅇㅇㅇissue</br ></span>이 들어가게 할거야-->
+                </span>
+                <span id="calculatedPrice">249,000원</span>
+              </p>
+          </div>
+          <div class="col-xs-4">
+              <div id="process3" class="process">
+                3
+              </div>
+              <p>
+                  We'll come for you<br />
+                  <span id="selectedDate"></span>
+                  <span id="selectedHour"></span>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END REQUEST 1 -->
+    <!-- REQUEST 2 -->
+    <div id="request2" class="section request2">
+      <div class="container">
+        <div class="row row-selector">
+          <div id="text-center" class="col-xs-12 text-center">
+            <!-- 이건 아래 Javascript로 선택시 문구가 바뀌도록 한다 -->
+            <p>모델명을 선택하세요</p>
+            <!-- 만약에 색깔 선택시, '색상을 선택하세요'로 바뀌게 한다 -->
+          </div>
+          <div id="sub-text-center" class="col-xs-12" style="margin: 20px 0 20px 0;">
+            <p>여기는 공백으로 둘 예정입니다.</p>
+
+          </div>
+          <!-- 아래 버튼들은 Form으로 감싸야 할까요? 추후 DB에서 불러와서 반복시켜 쓸 예정입니다 -->
+        </div>
+      </div>
+    </div>
+    <!-- REQUEST 3 : CHOOSE MODEL -->
+    <div id="request3" class="section request3">
+      <div class="container">
+        <div class="row row-selector select-model">
+          <!-- <form class="" action="index.html" method="post"> -->
+          <% for (i = 0; i < device.length; i++) { %>
+              <!-- <div class="col-md-2"> -->
+                <button name="button" id="modelSelect" value="<%= device[i].name.replace(/\s/g, '').toLowerCase(); %>" onclick="step1('<%= device[i].repair_deviceID %>', 'iPhone <%= device[i].name %>');">
+                  <p>iPhone <%= device[i].name %></p></button>
+              <!-- </div> -->
+          <% } %>
+          <!-- </form> -->
+          <button id="땜빵" value="땜빵" disabled="disabled" style="cursor: not-allowed; opacity: 0.65;">
+            <p>땜빵</p></button>
+          <div class="col-xs-12">
+            <a href="#"><p>I'm not sure what my model is ></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REQUEST 4 : CHOOSE COLOR -->
+    <!-- iPhone 5 -->
+    <div id="request4_5" class="section request4" style="display: none;">
+      <div class="container">
+        <div class="row row-selector select-color">
+          <form class="" action="" method="">
+            <div class="">
+              <button type="button" class="color black" name="black" onclick="step2(this.names)"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color silver" name="silver" onclick="step2(this.name);"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- iPhone 5s, 6, 6plus -->
+    <div id="request4_6" class="section request4" style="display: none;">
+      <div class="container">
+        <div class="row row-selector select-color">
+          <form class="" action="index.html" method="post">
+            <div class="">
+              <button type="button" class="color gold" name="gold" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color silver" name="silver" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color spacegray" name="spacegray" onclick="step2(this.name);"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- iPhone SE, 6s, 6splus -->
+    <div id="request4_6s" class="section request4" style="display: none;">
+      <div class="container">
+        <div class="row row-selector select-color">
+          <form class="" action="index.html" method="post">
+            <div class="">
+              <button type="button" type="button" class="color rosegold" name="rosegold" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color silver" name="silver" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color gold" name="gold" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color spacegray" name="spacegray" onclick="step2(this.name);"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- iPhone 7, 7plus -->
+    <div id="request4_7" class="section request4" style="display: none;">
+      <div class="container">
+        <div class="row row-selector select-color">
+          <form class="" action="index.html" method="post">
+            <div class="">
+              <button type="button" class="color red" name="red" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color black" name="black" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color jetblack" name="jetblack" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color rosegold" name="rosegold" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color silver" name="silver" onclick="step2(this.name);"></button>
+            </div>
+            <div class="">
+              <button type="button" class="color gold" name="gold" onclick="step2(this.name);"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- REQUEST 5 : CHOOSE ISSUE -->
+    <!-- 상단에 있는 Step이 변화해야하고, Device에 내 기기 정보가 들어가야 한다. -->
+    <div id="request5" class="section request5">
+      <div class="container">
+        <div class="row row-selector">
+          <div class="col-xs-4 issue-selector">
+            <div id="issue-name" class="issue-name" onclick="setIssutType(this)" data-selected="false" value="디스플레이 교체">
+              디스플레이 교체
+            </div>
+          </div>
+          <div class="col-xs-4 issue-selector">
+            <div id="issue-name" class="issue-name" onclick="setIssutType(this)" data-selected="false" value="배터리 교체">
+              배터리 교체
+            </div>
+          </div>
+          <div class="col-xs-4 issue-selector">
+            <div id="issue-etc" class="issue-name" onclick="setIssutType(this)" data-selected="false" value="기타">
+              기타
+            </div>
+          </div>
+        </div>
+        <div class="row row-selector">
+          <div id='issue-description' class="issue-description">
+            <textarea name="issue-description" placeholder="여기에 증상을 입력해주세요.&#10;예) 저녁에 충전을 시켜두고, 자고 일어났는데 화면이 나오지 않습니다. 전화를 해보면 울리는걸 보니 켜져있는 것 같습니다."></textarea>
+          </div>
+        </div>
+        <div class="row row-selector">
+          <div class="col-xs-12">
+            <button type="button" name="button" onclick="step3()">다음</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <form class="" action="index.html" method="post">
+      <div class="row">
+        <div class="col-xs-3">              </div>
+        <div class="col-xs-2">
+          <button type="button" name="issue_type" value="Broken Screen" onclick="setIssutType(this)" data-selected="false"><p>Broken Screen</p></button>
+        </div>
+        <div class="col-xs-2">
+          <button type="button" name="issue_type" value="Battery" onclick="setIssutType(this)" data-selected="false"><p>Battery</p></button>
+        </div>
+        <div class="col-xs-2">
+          <button id="issue-etc" type="button" name="issue_type" value="기타" onclick="setIssutType(this)" data-selected="false"><p>기타</p></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 issue-description">
+          <p>현재 증상을 자세히 설명해주세요</p>
+          <textarea name="name" id="issue_description" rows="8" cols="80" placeholder="예) 며칠 전부터 충전이 점차 되지 않더니 이제는 아예 켜지지도 않습니다. 리셋을 해봐도 소용이 없습니다."></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 issue-description">
+          <button type="button" onclick="step3();">다음</button>
+        </div>
+      </div>
+    </form> -->
+
+
+
+
+    <!-- REQUEST 6 : CHOOSE DATE -->
+    <div id="request6" class="section request6">
+      <div class="container">
+        <div class="row row-selector select-date" onmousedown="return false">
+          <div class="col-xs-12">
+            <p>도착 시간은 교통상황에 따라 차이가 있을 수 있습니다.</p>
+            <p>희망 방문 날짜를 선택해주세요.</p>
+          </div>
+
+          <!-- <div class="col-xs-12 days">
+
+          </div> -->
+          <div class="col-xs-12 days">
+            <% for (i = 0 ; i < 5 ; i++ ){ %>
+              <div id="chooseDate" name="<%=available_days[i].format('L') %>" data-selected='false'>
+                <div class="dayContainer">
+                  <div class="day">
+                    <span class="dayName"><%=available_days[i].format('ddd')%></span>
+                    <span class="dayNumber"><%=available_days[i].format('DD')%></span>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+            <!-- <div id="chooseDate" name="<%=available_days[0].format('L') %>">
+              <div class="dayContainer">
+                <div class="day">
+                  <span class="dayName"><%=available_days[0].format('ddd')%></span>
+                  <span class="dayNumber"><%=available_days[0].format('DD')%></span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="timePicker" id="timePicker">
+            <ul class="first_block">
+              <li value="12" data-selected='false'><%=available_days[0]%></li>
+              <% for(i = 8; i < 12; i++){ %>
+                <li value="<%= i %>" data-selected='false'><%= i %>am - <%= i+1 %>am</li>
+              <% } %>
+            </ul>
+            <ul class="second_block">
+              <!-- <% for(i = 12; i < 17; i++){ %>
+                <li value="<%= i %>"><%= i %>am - <%= i+1 %>am</li>
+              <% } %>
+            13시를 1pm으로 표기하는 부분에서 포기
+            -->
+              <li value="12" data-selected='false'>12pm - 1pm</li>
+              <li value="13" data-selected='false'>1pm - 2pm</li>
+              <li value="14" data-selected='false'>2pm - 3pm</li>
+              <li value="15" data-selected='false'>3pm - 4pm</li>
+              <li value="16" data-selected='false'>4pm - 5pm</li>
+            </ul>
+            <ul class="third_block">
+              <li value="17" data-selected='false'>5pm - 6pm</li>
+              <li value="18" data-selected='false'>6pm - 7pm</li>
+              <li value="19" data-selected='false'>7pm - 8pm</li>
+              <li value="20" data-selected='false'>8pm - 9pm</li>
+              <li value="21" data-selected='false'>9pm - 10pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row row-selector">
+          <div class="col-xs-12">
+            <button type="button" name="button" onclick="step4()">다음</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- REQUEST 7 : CHOOSE ADDRESS -->
+    <!-- 상단에 Step이 변화해야하고 Issue항목 밑에 수리 항목과 예상 수리비용이 들어가야한다. -->
+    <div id="request7" class="section request7">
+      <div class="container">
+        <div class="row row-selector select-address">
+          <div class="customerName col-xs-12">
+            <p>이름</p>
+            <input type="text" name="" value="" id="customerName">
+          </div>
+          <div class="customerNumber col-xs-12">
+            <p>전화번호</p>
+            <input type="tel" name="" value="" id="customerNumber">
+          </div>
+          <div class="address1 col-xs-12">
+            <p>주소</p>
+            <input type="text" name="" value="" id="address1">
+            <p class="addressBtn">주소 찾기</p>
+          </div>
+          <div class="address2 col-xs-12">
+            <p>상세주소</p>
+            <input type="text" name="" value="" id="address2">
+          </div>
+        </div>
+        <div class="row row-selector">
+          <div class="col-xs-12" style="border: 0px;">
+            <button type="button" name="button" onclick="send()">완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+          <!-- 희망하는 주소 선택하기 -->
+          <div class="row select-address">
+            <form class="" action="index.html" method="post">
+
+            </form>
+          </div>
+          <!-- 희망하는 날짜 선택하기 -->
+          <div class="row select-date">
+            <form class="" action="index.html" method="post">
+
+            </form>
+          </div>
+          <!-- 이제 완료하고 완료페이지로 넘어가야하니까 complete 페이지 만들어야한다 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- END REQUEST 2 -->
+    <!-- FOOTER -->
+    <% include ../template/footer %>
+    <!-- END FOOTER -->
+
+
+  </body>
+  <% include ../template/script %>
+
+  </script>
+  <script type="text/javascript" src="js/request.js">
+
+  </script>
+
+
+</html>

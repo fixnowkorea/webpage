@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WORKING ON TEST PAGE</title>
+    <!-- Theme CSS -->
+    <link href="http://13.124.2.3:8000/css/fixnow_test.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="http://13.124.2.3:8000/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <% include template/nav %>
+    <!-- END NAVIGATION -->
+    <!-- REQUEST 1 -->
+    <div id="request1" class="section request1">
+      <div class="container-fluid">
+        <div class="line"></div>
+        <div class="row">
+          <div class="col-lg-4">
+              <div class="process-active">
+                1
+              </div>
+              <p>Your Device</p>
+          </div>
+          <div class="col-lg-4">
+              <div class="process">
+                  2
+              </div>
+              <p>Issue</p>
+          </div>
+          <div class="col-lg-4">
+              <div class="process">
+                3
+              </div>
+              <p>We'll come for you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END REQUEST 1 -->
+    <!-- REQUEST 2 -->
+    <div id="request2" class="section request2">
+      <div class="container">
+        <div class="row row-selector">
+          <div class="col-lg-12 text-center">
+            <!-- 이건 아래 Javascript로 선택시 문구가 바뀌도록 한다 -->
+            <p>모델명을 선택하세요</p>
+          </div>
+          <div class="col-lg-12" style="margin: 20px 0 20px 0;">
+            <p>여기는 공백으로 둘 예정입니다.</p>
+          </div>
+          <!-- 아래 버튼들은 Form으로 감싸야 할까요? 추후 DB에서 불러와서 반복시켜 쓸 예정입니다 -->
+        </div>
+      </div>
+    </div>
+    <!-- REQUEST 3 : CHOOSE MODEL -->
+    <div id="request3" class="section request3">
+      <div class="container">
+        <div class="row row-selector select-model">
+          <!-- <form class="" action="index.html" method="post"> -->
+          <%
+            for (i = 0; i < device.length; i++) { %>
+              <div class="col-md-2">
+                <button name="button"><p>iPhone <%= device[i].name %></p></button>
+              </div>
+          <%
+            }
+          %>
+          <!-- </form> -->
+
+          <div class="col-lg-12">
+            <a href="#"><p>I'm not sure what my model is ></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REQUEST 4 : CHOOSE COLOR -->
+    <div id="request4" class="section request4">
+      <div class="container">
+        <div class="row row-selector select-color">
+          <form class="" action="index.html" method="post">
+            <div class="">
+              <button class="color red" name="red"></button>
+            </div>
+            <div class="">
+              <button class="color black" name="black"></button>
+            </div>
+            <div class="">
+              <button class="color jetblack" name="jetblack"></button>
+            </div>
+            <div class="">
+              <button class="color spacegray" name="spacegray"></button>
+            </div>
+            <div class="">
+              <button class="color rosegold" name="rosegold"></button>
+            </div>
+            <div class="">
+              <button class="color gold" name="gold"></button>
+            </div>
+            <div class="">
+              <button class="color silver" name="silver"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- REQUEST 5 : CHOOSE ISSUE -->
+    <!-- 상단에 있는 Step이 변화해야하고, Device에 내 기기 정보가 들어가야 한다. -->
+    <div id="request5" class="section request5">
+      <div class="container">
+        <div class="row row-selector select-issue">
+          <form class="" action="index.html" method="post">
+            <div class="row">
+              <div class="col-lg-3">              </div>
+              <div class="col-lg-2">
+                <button name="button"><p>Broken Screen</p></button>
+              </div>
+              <div class="col-lg-2">
+                <button name="button"><p>Battery</p></button>
+              </div>
+              <div class="col-lg-2">
+                <button name="button"><p>기타</p></button>
+              </div>
+            </div>
+            <div class="col-lg-3">               </div>
+            <div class="row">
+              <div class="col-lg-12 issue-description">
+                <p>현재 증상을 자세히 설명해주세요</p>
+                <textarea name="name" rows="8" cols="80" placeholder="예) 며칠 전부터 충전이 점차 되지 않더니 이제는 아예 켜지지도 않습니다. 리셋을 해봐도 소용이 없습니다."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- REQUEST 6 : CHOOSE DATE -->
+    <div id="request6" class="section request6">
+      <div class="container">
+        <div class="row row-selector select-date">
+          <div class="col-lg-12">
+            <p>도착 시간은 교통상황에 따라 차이가 있을 수 있습니다.</p>
+            <p>희망 방문 날짜를 선택해주세요.</p>
+          </div>
+          <div class="col-lg-12 days">
+            <div class="dayContainer">
+              <div class="day today">
+                <span class="dayName">today</span>
+                <span class="dayNumber">10</span>
+              </div>
+            </div>
+            <div class="dayContainer">
+              <div class="day">
+                <span class="dayName">화요일</span>
+                <span class="dayNumber">11</span>
+              </div>
+            </div>
+            <div class="dayContainer">
+              <div class="day">
+                <span class="dayName">수요일</span>
+                <span class="dayNumber">12</span>
+              </div>
+            </div>
+            <div class="dayContainer">
+              <div class="day">
+                <span class="dayName">목요일</span>
+                <span class="dayNumber">13</span>
+              </div>
+            </div>
+            <div class="dayContainer">
+              <div class="day">
+                <span class="dayName">금요일</span>
+                <span class="dayNumber">14</span>
+              </div>
+            </div>
+          </div>
+          <div class="timePicker">
+            <ul class="first_block">
+              <li>8am - 9am</li>
+              <li>9am - 10am</li>
+              <li>10am - 11am</li>
+              <li>11am - 12am</li>
+            </ul>
+            <ul class="second_block">
+              <li>12pm - 1pm</li>
+              <li>1pm - 2pm</li>
+              <li>2pm - 3pm</li>
+              <li>3pm - 4pm</li>
+              <li>4pm - 5pm</li>
+            </ul>
+            <ul class="third_block">
+              <li>5pm - 6pm</li>
+              <li>6pm - 7pm</li>
+              <li>7pm - 8pm</li>
+              <li>8pm - 9pm</li>
+              <li>9pm - 10pm</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- REQUEST 7 : CHOOSE ADDRESS -->
+    <!-- 상단에 Step이 변화해야하고 Issue항목 밑에 수리 항목과 예상 수리비용이 들어가야한다. -->
+    <div id="request7 "class="section request7"  >
+      <div class="container">
+        <div class="row row-selector select-address">
+          <div class="customerName col-lg-12">
+            <p>이름</p>
+            <input type="text" name="" value="">
+          </div>
+          <div class="customerNumber col-lg-12">
+            <p>전화번호</p>
+            <input type="text" name="" value="">
+          </div>
+          <div class="address1 col-lg-12">
+            <p>주소</p>
+            <input type="text" name="" value="">
+            <p class="addressBtn">주소 찾기</p>
+          </div>
+          <div class="address2 col-lg-12">
+            <p>상세주소</p>
+            <input type="text" name="" value="">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+          <!-- 희망하는 주소 선택하기 -->
+          <div class="row select-address">
+            <form class="" action="index.html" method="post">
+
+            </form>
+          </div>
+          <!-- 희망하는 날짜 선택하기 -->
+          <div class="row select-date">
+            <form class="" action="index.html" method="post">
+
+            </form>
+          </div>
+          <!-- 이제 완료하고 완료페이지로 넘어가야하니까 complete 페이지 만들어야한다 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- END REQUEST 2 -->
+    <!-- FOOTER -->
+    <% include template/footer %>
+    <!-- END FOOTER -->
+  </body>
+  <% include template/script %>
+</html>
